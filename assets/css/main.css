@@ -20,6 +20,7 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;}
 
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
@@ -67,6 +68,10 @@ input, select, textarea {
 	appearance: none;
 }
 
+.paragraph {
+	text-align: justify;
+}
+
 /* Row */
 
 	.row {
@@ -77,15 +82,55 @@ input, select, textarea {
 	}
 
 	.row img {
-		border-radius:5px;
-	}
+		border-radius: 8px;
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
+		overflow: hidden;
+	} 
 
 	.row img:hover {
 		transform: scale(1.05);
 		transition:all 1s;
   		-webkit-transition:all 1s;
-		 
 	}
+
+	.image-container {
+		position: relative; /* Agregado para controlar posición de caption */
+	}
+
+	.image-container .caption {
+		position: absolute;
+    	top: 0;
+    	left: 0;
+   		width: 100%;
+    	height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		border-radius: 8px;
+		text-decoration: none;
+		opacity: 0;
+	}
+
+
+
+	.image-container:hover .caption {
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)); 
+		opacity: 1;
+		pointer-events: auto;
+		color:#f4f4f4;
+		transition:all 1s;
+	}
+
+	#icons {
+		padding: 0 1em 0 1em;
+		display: flex;
+		justify-content: flex-end;
+		text-align: center;
+		gap: 0.75em;
+		font-size: 1.4em;
+	}
+
 
 		.row > * {
 			box-sizing: border-box;
@@ -1866,8 +1911,9 @@ input, select, textarea {
 		width: 100%;
 		opacity: 0.8;
 		margin-top: 150px;
+		border-radius: 20px;
 		background: #ffffff;
-		box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
+		box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
 		-moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-webkit-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		-ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
